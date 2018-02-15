@@ -33,7 +33,7 @@ class JSONEditor(Textarea):
     class Media:
         js = (
             getattr(settings,"JSON_EDITOR_JS",settings.STATIC_URL+'jsoneditor/jsoneditor.js'),
-            settings.STATIC_URL+'django-jsoneditor/django-jsoneditor.js',
+            getattr(settings,"DJANGO_JSON_EDITOR_JS",settings.STATIC_URL+'django-jsoneditor/django-jsoneditor.js'),
         )
         css= {'all': ( getattr(settings, "JSON_EDITOR_CSS",settings.STATIC_URL+'jsoneditor/jsoneditor.css'),)}
 
